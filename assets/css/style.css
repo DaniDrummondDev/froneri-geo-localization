@@ -1,0 +1,25 @@
+:root {
+    --light-blue: #83edff;
+    --middle-blue: #68bdcc;
+    --dark-blue: #0042ff;
+    --black: #000;
+    --white: #fff;
+}
+
+.bg-blue {
+    background-color: var(--light-blue);
+}
+
+.txt-dark-blue {
+    color: var(--dark-blue);
+    font-weight: bold;
+}
+
+svg {
+    width: 5%;
+}
+
+.btn:hover {
+    background-color: var(--middle-blue);
+    color: var(--white);
+}

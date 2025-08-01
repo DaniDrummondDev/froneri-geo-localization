@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clube do Sorvete</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
+</head>
+
+<body x-data="geoLoc()" x-init="init()"
+    class="d-flex flex-column justify-content-center align-items-center p-4 bg-light position-relative">
+    <!-- Seção de Alertas -->
+    <div id="alert-container" class="w-25 mt-3 me-3 position-absolute top-0 end-0"></div>
+    <!-- Aqui serão exibidos os alertas -->
+
+    <div class="p-4">
+        <img src="./assets/images/logo.webp" class="rounded-circle" alt="" />
+    </div>
+
+    <div class="p-4">
+        <h1>@clubedosorvete</h1>
+    </div>
+
+    <div class="pb-3 text-center">
+        <p>
+            Aqui pode preencher o seu endereço presuisando pelo CEP ou preenchendo
+            manualmente.
+        </p>
+        <p>
+            Após ter preenchido os dados é só procurar pela loja mais próxima da sua
+            casa!
+        </p>
+    </div>
+
+    <!-- Formulário de CEP -->
+    <div>
+        <!-- <h3>
+        Não foi possível detectar sua localização, por favor insira seu CEP:
+      </h3> -->
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
+                <label for="cep">CEP:</label>
+            </div>
+            <div class="col-auto">
+                <input type="text" class="form-control" placeholder="Digite o CEP" x-model="cep" />
+            </div>
+        </div>
+
+        <div class="row g-3 align-items-center my-2">
+            <div class="col-auto mt-3">
+                <button class="btn bg-blue txt-dark-blue" @click="buscarEndereco()">
+                    Pesquisar meu endereço!
+                </button>
+            </div>
+        </div>
+
+        <div class="row g-3 align-items-center my-2">
+            <div class="col-auto">
+                <label for="rua">Rua:</label>
+            </div>
+            <div class="col-auto">
+                <input type="text" class="form-control" placeholder="Rua" x-model="rua" />
+            </div>
+        </div>
+
+        <div class="row g-3 align-items-center my-2">
+            <div class="col-auto">
+                <label for="bairro">Bairro:</label>
+            </div>
+            <div class="col-auto">
+                <input type="text" class="form-control" placeholder="Bairro" x-model="bairro" />
+            </div>
+        </div>
+
+        <div class="row g-3 align-items-center my-2">
+            <div class="col-auto">
+                <label for="cidade">Cidade:</label>
+            </div>
+            <div class="col-auto">
+                <input type="text" class="form-control" placeholder="Cidade" x-model="cidade" />
+            </div>
+        </div>
+
+        <div class="row g-3 align-items-center my-2">
+            <div class="col-auto">
+                <label for="estado">Estado:</label>
+            </div>
+            <div class="col-auto">
+                <input type="text" class="form-control" placeholder="Estado" x-model="estado" />
+            </div>
+        </div>
+
+        <div class="row g-3 align-items-center my-2">
+            <div class="col-auto my-3">
+                <button class="btn bg-blue txt-dark-blue" @click="buscarCoordenadasEndereco()">
+                    Procurar a loja mais próxima!
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/stores.js"></script>
+    <script src="./assets/js/app.js"></script>
+</body>
+
+</html>
